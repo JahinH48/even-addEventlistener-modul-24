@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>More Events</h2>
+
+    <section>
+        <h3 id="decret-thing">Very very important </h3>
+        <input id="input-confirm" type="text" placeholder="Please type delete">
+        <button id="delete-button" disabled>Delete</button>
+    </section>
+
+    <script>
+        document.getElementById('delete-button').addEventListener('click', function () {
+            document.getElementById('decret-thing').style.display = 'none';
+        })
+
+        // fokas
+        document.getElementById('input-confirm').addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'lightcoral';
+        })
+        // Unfokas
+        document.getElementById('input-confirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        })
+
+        // Keyup
+        document.getElementById('input-confirm').addEventListener('Keyup', function (event) {
+            const deleteAttrib = document.getElementById('delete-button');
+            if (event.target.value == 'delete') {
+
+                deleteAttrib.removeAttribute('disabled');
+            } else {
+                deleteAttrib.setAttribute('disabled', true)
+
+            }
+
+        })
+        // Keydown
+        document.getElementById('input-confirm').addEventListener('Keydown', function () {
+            const deleteField = document.getElementById('input-confirm')
+        })
+
+    </script>
+</body>
+
+</html>
